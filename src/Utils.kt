@@ -6,7 +6,19 @@ import kotlin.io.path.readText
 /**
  * Reads lines from the given input txt file.
  */
-fun readInput(name: String) = Path("src/$name.txt").readText().trim().lines()
+fun readInput(name: String) = Path("src/inputs/$name.txt").readText().trim().lines()
+
+/**
+ * Reads text from the given input txt file.
+ */
+fun readText(fileName: String) =
+    Path("src/inputs/$fileName.txt").readText()
+
+/**
+ * Reads text from the given input txt file and splits it into a list.
+ */
+fun readSplitText(fileName: String, separator: String) =
+    Path("src/inputs/$fileName.txt").readText().trim().split(separator)
 
 /**
  * Converts string to md5 hash.
